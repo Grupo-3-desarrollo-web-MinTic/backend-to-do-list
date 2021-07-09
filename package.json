@@ -1,0 +1,34 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "This is a simple implementation of a to do list using mongoDB and express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grupo-3-desarrollo-web-MinTic/backend-to-do-list.git"
+  },
+  "keywords": [
+    "js",
+    "express",
+    "mongodb"
+  ],
+  "author": "Grupo 3 desarrollo web MinTic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grupo-3-desarrollo-web-MinTic/backend-to-do-list/issues"
+  },
+  "homepage": "https://github.com/Grupo-3-desarrollo-web-MinTic/backend-to-do-list#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.10"
+  }
+}
