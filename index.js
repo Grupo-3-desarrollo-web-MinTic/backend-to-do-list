@@ -56,7 +56,7 @@ app.use("/api", router);
 
 /*****************************/
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3001 || 3002);
 /* Usefull in Heroku and deployed environmets, see also
   * https://stackoverflow.com/questions/18864677/what-is-process-env-port-in-node-js
   * */

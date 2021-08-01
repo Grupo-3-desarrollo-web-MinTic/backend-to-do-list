@@ -1,6 +1,6 @@
-const todoController = require("../controllers/todo-controller");
+const todoController = require("../controller/todoController");
 const routerx = require("express-promise-router");
-const auth = require('../middlewares/auth');
+const auth = require("../middleware/auth");
 
 const router = routerx();
 
