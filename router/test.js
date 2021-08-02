@@ -7,8 +7,7 @@ const router = routerx();
 router.get("/send", test.send);
 router.get("/more", test.sendMore);
 router.get("/List", test.sendList);
-
-//router.get("/test", { data: "hola" });
+router.post("/login", test.login)
 
 module.exports = router;
 

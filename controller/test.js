@@ -1,8 +1,22 @@
 module.exports = {
+  login: async (req, res, next) => {
+    try {
+      const reg = { user: req.body.user, password: req.body.password };
+      if (reg.user === "AndresMpa" && reg.password === "123") {
+        res.status(200).json(reg);
+      }
+      console.log(reg);
+    } catch (e) {
+      res.status(500).send({
+        message: "Ocurrió un error",
+      });
+      next(e);
+    }
+  },
   send: async (req, res, next) => {
     try {
       const reg = {
-        res: "Holita" 
+        res: "Holita",
       };
       res.status(200).json(reg);
     } catch (e) {
@@ -40,8 +54,8 @@ module.exports = {
           "Hacer ejercicio",
           "Ir al doctor",
           "Comer con Bryan",
-          "Reunión con Fred"
-        ]
+          "Reunión con Fred",
+        ],
       };
       res.status(200).json(reg);
     } catch (e) {
