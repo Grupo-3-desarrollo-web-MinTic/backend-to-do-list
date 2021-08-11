@@ -13,37 +13,7 @@ module.exports = {
       next(e);
     }
   },
-  send: async (req, res, next) => {
-    try {
-      const reg = {
-        res: "Holita",
-      };
-      res.status(200).json(reg);
-    } catch (e) {
-      res.status(500).send({
-        message: "Ocurrió un error",
-      });
-      next(e);
-    }
-  },
-  sendMore: async (req, res, next) => {
-    try {
-      const reg = {
-        res: "Holita",
-        name: "test",
-        description: "Dolor de mano",
-        status: 1,
-        progress: 1,
-      };
-      res.status(200).json(reg);
-    } catch (e) {
-      res.status(500).send({
-        message: "Ocurrió un error",
-      });
-      next(e);
-    }
-  },
-  sendList: async (req, res, next) => {
+  list: async (req, res, next) => {
     try {
       const reg = {
         user: "AndresMpa",
@@ -65,9 +35,12 @@ module.exports = {
       next(e);
     }
   },
-  remove: async (req, res, next) => {
+  listHistoric: async (req, res, next) => {
+    console.log("historic");
     try {
-      console.log(req.body.id);
+      const reg = {
+        list: ["Esperar a Angie", "Preguntar por Marcela", "Presentar avances"],
+      };
       res.status(200).json(reg);
     } catch (e) {
       res.status(500).send({
@@ -75,5 +48,69 @@ module.exports = {
       });
       next(e);
     }
+  },
+  createUser: async (req, res, next) => {
+    console.log("User created");
+    try {
+      console.log(req);
+      res.status(200).json(reg);
+    } catch (e) {
+      res.status(500).send({
+        message: "Ocurrió un error",
+      });
+      next(e);
+    }
+  },
+  createTask: async (req, res, next) => {
+    console.log("Task created");
+    try {
+      console.log(req);
+      res.status(200).json(reg);
+    } catch (e) {
+      res.status(500).send({
+        message: "Ocurrió un error",
+      });
+      next(e);
+    }
+
+  },
+  updateUser: async (req, res, next) => {
+    console.log("User updated");
+    try {
+      console.log(req);
+      res.status(200).json(reg);
+    } catch (e) {
+      res.status(500).send({
+        message: "Ocurrió un error",
+      });
+      next(e);
+    }
+
+  },
+  deleteUser: async (req, res, next) => {
+    console.log("User deleted");
+    try {
+      console.log(req);
+      res.status(200).json(reg);
+    } catch (e) {
+      res.status(500).send({
+        message: "Ocurrió un error",
+      });
+      next(e);
+    }
+
+  },
+  deleteTask: async (req, res, next) => {
+    console.log("task deleted");
+    try {
+      console.log(req);
+      res.status(200).json(reg);
+    } catch (e) {
+      res.status(500).send({
+        message: "Ocurrió un error",
+      });
+      next(e);
+    }
+
   },
 };
