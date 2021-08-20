@@ -1,8 +1,0 @@
-POST http://localhost:3001/api/test/deletetask HTTP/1.1
-content-type: application/json
-
-{
-    "id": "asdsddddd"
-}
-# GET http://localhost:3001/api/test/listHistoric HTTP/1.1
-# id: 610dc206f54b044ee0a273b6

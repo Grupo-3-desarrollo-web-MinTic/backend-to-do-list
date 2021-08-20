@@ -1,9 +1,7 @@
 require("../DB/connection");
-const userData = require("../models/users");
-
-const tasks = require("../models/task");
-
 const historicTask = require("../models/historicTask");
+const userData = require("../models/users");
+const tasks = require("../models/task");
 
 const identificar = async (user, password) => {
   const response = await userData.find({ name: user, password: password });
@@ -68,7 +66,7 @@ module.exports = {
       }
 
       // searchProducts();
-      // console.log(reg);
+      console.log(reg);
     } catch (e) {
       res.status(500).send({
         message: "Ocurrió un error",
@@ -79,6 +77,7 @@ module.exports = {
   list: async (req, res, next) => {
     try {
       const reg = { id: req.headers.id };
+      console.log(reg);
       if (reg.id == null) {
         res.status(400).json({ ok: false });
       }
@@ -158,7 +157,7 @@ module.exports = {
           title: reg.title,
           user: reg.user,
         });
-        await tarea.save(function (err, objeto) {
+        tarea.save(function (err, objeto) {
           if (err) {
             throw err;
           }
@@ -236,42 +235,6 @@ module.exports = {
           next(e);
         }
       }
-    } catch (e) {
-      res.status(500).send({
-        message: "Ocurrió un error",
-      });
-      next(e);
-    }
-  },
-  list: async (req, res, next) => {
-    try {
-      const reg = {
-        user: "AndresMpa",
-        profile: "none",
-        list: [
-          "Sacar al perro",
-          "Armar teclado",
-          "Hacer ejercicio",
-          "Ir al doctor",
-          "Comer con Bryan",
-          "Reunión con Fred",
-        ],
-      };
-      res.status(200).json(reg);
-    } catch (e) {
-      res.status(500).send({
-        message: "Ocurrió un error",
-      });
-      next(e);
-    }
-  },
-  listHistoric: async (req, res, next) => {
-    console.log("historic");
-    try {
-      const reg = {
-        list: ["Esperar a Angie", "Preguntar por Marcela", "Presentar avances"],
-      };
-      res.status(200).json(reg);
     } catch (e) {
       res.status(500).send({
         message: "Ocurrió un error",
